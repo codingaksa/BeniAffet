@@ -1,0 +1,229 @@
+/* App.css */
+
+/* Temel ayarlar */
+body {
+  margin: 0;
+  font-family: "Caveat", cursive; /* Tailwind'deki varsayılan fonta yakın */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ana kapsayıcı */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Sayfanın tamamını kaplamasını sağlar */
+  background-color: #fce7f3; /* Açık pembe arka plan */
+  padding: 1rem; /* Genel iç boşluk */
+  box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağlar */
+}
+
+/* Kabul edildi ekranı stilleri */
+.accepted-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem; /* İç boşluk */
+  background-color: #fff; /* Beyaz arka plan */
+  border-radius: 0.75rem; /* Yuvarlak köşeler */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  transition: all 0.3s ease-in-out; /* Yumuşak geçiş efekti */
+  max-width: 90%; /* Genişliği sınırlama */
+  text-align: center;
+}
+
+.accepted-screen:hover {
+  transform: scale(1.05); /* Üzerine gelindiğinde büyüme */
+}
+
+.accepted-title {
+  font-size: 3.75rem; /* Daha büyük başlık */
+  font-weight: bold;
+  color: #db2777; /* Koyu pembe renk */
+  margin-bottom: 1.5rem; /* Alt boşluk */
+  text-align: center;
+  animation: bounce 1s infinite; /* Zıplama animasyonu */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Metin gölgesi */
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* Video kapsayıcısı stilleri */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 48rem; /* Maksimum genişlik */
+  padding-bottom: 56.25%; /* 16:9 oranını korur */
+  border-radius: 0.75rem; /* Yuvarlak köşeler */
+  overflow: hidden;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25); /* Derin gölge */
+}
+
+.youtube-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.accepted-message {
+  margin-top: 1.5rem; /* Üst boşluk */
+  font-size: 1.125rem; /* Metin boyutu */
+  color: #4b5563; /* Koyu gri metin */
+  text-align: center;
+}
+
+/* Profil resmi stilleri */
+.profile-img {
+  width: 12rem; /* Genişlik */
+  height: 12rem; /* Yükseklik */
+  border-radius: 50%; /* Tamamen yuvarlak */
+  border: 4px solid #ec4899; /* Pembe kenarlık */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  margin-bottom: 2rem; /* Alt boşluk */
+  object-fit: cover; /* Resmi kutuya sığdırır */
+  transition: all 0.3s ease-in-out; /* Yumuşak geçiş efekti */
+}
+
+.profile-img:hover {
+  transform: scale(1.05); /* Üzerine gelindiğinde büyüme */
+}
+
+/* Soru kutusu stilleri */
+.question-box {
+  background-color: #fff; /* Beyaz arka plan */
+  padding: 2rem; /* İç boşluk */
+  border-radius: 0.75rem; /* Yuvarlak köşeler */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  text-align: center;
+  max-width: 28rem; /* Maksimum genişlik */
+  width: 100%;
+  margin-bottom: 2rem; /* Alt boşluk */
+  transition: all 0.3s ease-in-out; /* Yumuşak geçiş efekti */
+}
+
+.question-box:hover {
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25); /* Daha belirgin gölge */
+}
+
+.question-text {
+  font-size: 2.5rem; /* Çok daha büyük yazı */
+  font-weight: 800; /* Kalın yazı */
+  color: #1f2937; /* Çok koyu gri metin */
+  line-height: 1.3; /* Satır yüksekliği */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Metin gölgesi */
+}
+
+/* Butonlar kapsayıcısı stilleri */
+.buttons-container {
+  display: flex;
+  flex-direction: column; /* Küçük ekranlarda dikey */
+  gap: 1.5rem; /* Butonlar arası boşluk */
+  margin-bottom: 2rem; /* Alt boşluk */
+}
+
+@media (min-width: 640px) {
+  /* Geniş ekranlarda yatay */
+  .buttons-container {
+    flex-direction: row;
+  }
+}
+
+/* Buton stilleri */
+.yes-btn,
+.no-btn {
+  padding: 1.5rem 3.5rem; /* Daha fazla iç boşluk */
+  font-size: 1.8rem; /* Daha büyük yazı boyutu */
+  font-weight: bold;
+  color: #fff; /* Beyaz metin */
+  border-radius: 9999px; /* Tamamen yuvarlak */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Belirgin gölge */
+  transition: all 0.3s ease-in-out; /* Yumuşak geçiş efekti */
+  border: none;
+  cursor: pointer;
+  outline: none; /* Odaklanma çizgisini kaldırır */
+}
+
+.yes-btn {
+  background: linear-gradient(
+    to right,
+    #28a745,
+    #218838
+  ); /* Daha canlı yeşil tonları */
+}
+
+.yes-btn:hover {
+  transform: scale(1.15); /* Üzerine gelindiğinde daha fazla büyüme */
+  box-shadow: 0 12px 24px rgba(0, 128, 0, 0.5); /* Daha belirgin yeşil gölge */
+}
+
+.yes-btn:focus {
+  box-shadow: 0 0 0 5px rgba(40, 167, 69, 0.5); /* Odaklanma halkası */
+}
+
+.no-btn {
+  background: linear-gradient(
+    to right,
+    #dc3545,
+    #c82333
+  ); /* Daha canlı kırmızı tonları */
+}
+
+.no-btn:hover {
+  transform: scale(1.1); /* Üzerine gelindiğinde büyüme */
+  box-shadow: 0 12px 24px rgba(128, 0, 0, 0.5); /* Daha belirgin kırmızı gölge */
+}
+
+.no-btn:focus {
+  box-shadow: 0 0 0 5px rgba(220, 53, 69, 0.5); /* Odaklanma halkası */
+}
+
+/* Mesajlar kapsayıcısı stilleri */
+.messages-container {
+  min-height: 2.5rem; /* Mesaj için minimum yükseklik */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-text {
+  font-size: 1.5rem; /* Daha büyük metin boyutu */
+  font-weight: 600; /* Daha belirgin yazı */
+  color: #4b5563; /* Koyu gri metin */
+  animation: fadeInOut 4s ease-in-out infinite; /* Mesajın ortaya çıkış animasyonu */
+}
+
+/* Animasyon tanımı (Mesaj için) */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
